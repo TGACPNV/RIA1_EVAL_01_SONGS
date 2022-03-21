@@ -26,6 +26,7 @@ module.exports = class Song {
      * @exception Throws TooShortLengthException if the song's length do not reach 10 seconds.
      */
     constructor(title, length, artists) {
+        if(length<10) throw new TooShortSongException()
         this.#title = title
         this.#length = length
         this.#artists = artists
