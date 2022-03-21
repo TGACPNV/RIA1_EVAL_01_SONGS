@@ -36,7 +36,13 @@ module.exports = class Artist{
      */
     toString(withDateOfBirth = false){
         let result = this.#firstname + " " + this.#lastname
-        if(withDateOfBirth) result+= " " + this.#dateOfBirth.toString()
+        if(withDateOfBirth) {
+            if(this.#dateOfBirth != null){
+                result+= " " + this.#dateOfBirth.toString()
+            }else {
+                throw new DateOfBirthException()
+            }
+        }
         return result
     }
     //endregion public methods
