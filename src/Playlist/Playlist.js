@@ -67,7 +67,8 @@ module.exports = class Playlist {
      * @exception Throws EmptySongsListException if the newListOfSongs is empty
      */
     initSongs(newListOfSongs){
-        throw new Error();
+        this.#songs = []
+        this.addSongs(newListOfSongs)
     }
     //endregion public methods
 
